@@ -411,7 +411,20 @@ namespace
 
             SetFocus(GetDlgItem(hDlg, IDC_EDIT_BLOCK_SIZE));
 
-            pData->SetPreviewPosition(hDlg, 0, 0);
+	    // The image is often largely transparent, so search the image for the topright-most visible
+	    // pixel and put the preview there.
+	    {
+		    int x, y;
+		    pData->m_pFilter->SourceImage->CenterVisiblePixel(x, y);
+
+		    HWND hItem = GetDlgItem(hDlg, ID_PROXY_ITEM);
+		    RECT wRect;
+		    GetClientRect(hItem, &wRect);
+		    int width = (wRect.right - wRect.left);
+		    int height = (wRect.bottom - wRect.top);
+
+		    pData->SetPreviewPosition(hDlg, x - width/2, y - height/2);
+	    }
 
             SetDlgItems(hDlg, pData->m_pFilter->CurrentSettings);
             pData->UpdateDisplayAfterSettingsChange(hDlg);

@@ -17,6 +17,9 @@ public:
     void Alloc(int width, int height);
     Vec4f &ptr(int x, int y);
     const Vec4f &ptr(int x, int y) const { return const_cast<Image *>(this)->ptr(x, y); }
+    void TopLeftVisiblePixel(int &x, int &y) const;
+    void BottomRightVisiblePixel(int &x, int &y) const;
+    void CenterVisiblePixel(int &x, int &y) const;
 };
 
 void swap(Image &lhs, Image &rhs);
