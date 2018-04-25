@@ -93,13 +93,15 @@ del "$(IntDir)%(Filename).rr"
     <LinkIncremental>false</LinkIncremental>
     <TargetExt>.8bf</TargetExt>
     <IntDir>..\build\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
-    <OutDir>..\bin</OutDir>
+    <OutDir>..\bin\</OutDir>
+    <TargetName>mosaix-ps</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
     <TargetExt>.8bf</TargetExt>
     <IntDir>..\build\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
-    <OutDir>..\bin</OutDir>
+    <OutDir>..\bin\</OutDir>
+    <TargetName>mosaix-ps</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
