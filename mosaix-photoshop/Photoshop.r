@@ -3,7 +3,9 @@
 #define plugInCopyrightYear    "2018"
 #define plugInDescription      "Mosaix"
 
-#define vendorName             "noisefloordev"
+// This determines the menu item the filter goes into.  This won't work correctly for
+// non-English versions of Photoshop, but there's nothing we can do about that.
+#define vendorName             "Pixelate"
 #define plugInAETEComment      "Mosaix"
 
 #define plugInSuiteID        'sdK4'
