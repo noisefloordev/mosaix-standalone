@@ -1,0 +1,5 @@
+*.vcxproj.user
+*.aps
+build
+bin
+.vs

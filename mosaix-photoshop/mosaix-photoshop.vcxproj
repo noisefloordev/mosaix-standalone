@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\mosaix-core\Image.cpp" />
+    <ClCompile Include="..\mosaix-core\Mosaic.cpp" />
+    <ClCompile Include="..\mosaix-core\Vec4f.cpp" />
+    <ClCompile Include="PhotoshopHelpers.cpp" />
+    <ClCompile Include="Plugin.cpp" />
+    <ClCompile Include="PreviewRenderer.cpp" />
+    <ClCompile Include="Settings.cpp" />
+    <ClCompile Include="UI.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\mosaix-core\Image.h" />
+    <ClInclude Include="..\mosaix-core\Mosaic.h" />
+    <ClInclude Include="..\mosaix-core\Vec4f.h" />
+    <ClInclude Include="Constants.h" />
+    <ClInclude Include="PhotoshopHelpers.h" />
+    <ClInclude Include="PreviewRenderer.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="Settings.h" />
+    <ClInclude Include="UI.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Photoshop.rc">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir);$(VC_IncludePath);$(WindowsSDK_IncludePath);</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir);$(VC_IncludePath);$(WindowsSDK_IncludePath);</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Photoshop.r">
+      <FileType>Document</FileType>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Compiling PiPL resource...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">cl /I..\..\PhotoshopSDK\pluginsdk\PhotoshopAPI\General  /I..\..\PhotoshopSDK\pluginsdk\PhotoshopAPI\PICA_SP /I..\..\PhotoshopSDK\pluginsdk\PhotoshopAPI\Photoshop   /I..\..\PhotoshopSDK\pluginsdk\PhotoshopAPI\Resources     /I..\..\PhotoshopSDK\pluginsdk\samplecode\Common\Resources    /I..\..\PhotoshopSDK\pluginsdk\samplecode\Common\Includes /EP /DMSWindows=1 /Tc"%(FullPath)" &gt;     "$(IntDir)%(Filename).rr"
+..\..\PhotoshopSDK\pluginsdk\samplecode\resources\cnvtpipl.exe "$(IntDir)%(Filename).rr" "$(IntDir)%(Filename).pipl"
+del "$(IntDir)%(Filename).rr"
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)%(Filename).pipl;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">cl /I..\..\PhotoshopSDK\pluginsdk\PhotoshopAPI\General  /I..\..\PhotoshopSDK\pluginsdk\PhotoshopAPI\PICA_SP /I..\..\PhotoshopSDK\pluginsdk\PhotoshopAPI\Photoshop   /I..\..\PhotoshopSDK\pluginsdk\PhotoshopAPI\Resources     /I..\..\PhotoshopSDK\pluginsdk\samplecode\Common\Resources    /I..\..\PhotoshopSDK\pluginsdk\samplecode\Common\Includes /EP /DMSWindows=1 /Tc"%(FullPath)" &gt;     "$(IntDir)%(Filename).rr"
+..\..\PhotoshopSDK\pluginsdk\samplecode\resources\cnvtpipl.exe "$(IntDir)%(Filename).rr" "$(IntDir)%(Filename).pipl"
+del "$(IntDir)%(Filename).rr"
+</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Compiling PiPL resource...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename).pipl;%(Outputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{D21E83A7-D484-425C-9E32-C23146572D08}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>mosaix-photoshop</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <ProjectName>mosaix-photoshop</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <TargetExt>.8bf</TargetExt>
+    <IntDir>..\build\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+    <OutDir>..\bin</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <TargetExt>.8bf</TargetExt>
+    <IntDir>..\build\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+    <OutDir>..\bin</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>MSWindows=1;WIN32=1;NDEBUG;_WINDOWS;_USRDLL;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\PhotoshopSDK\pluginsdk\samplecode\common\Includes;..\..\PhotoshopSDK\pluginsdk\PhotoshopAPI\Photoshop;..\..\PhotoshopSDK\pluginsdk\PhotoshopAPI\General;..\..\PhotoshopSDK\pluginsdk\PhotoshopAPI\PICA_SP;..\..\PhotoshopSDK\pluginsdk\PhotoshopAPI\ADM;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>User32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <CustomBuildStep>
+      <Command>copy /y "$(TargetPath)" "C:\Program Files\Common Files\Adobe\Plug-Ins\CC\"</Command>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Message>Copying plugin</Message>
+      <Outputs>C:\Program Files\Common Files\Adobe\Plug-Ins\CC\$(OutputFile)</Outputs>
+      <Inputs>$(TargetPath) $(TargetFileName)</Inputs>
+    </CustomBuildStep>
+    <ResourceCompile>
+      <PreprocessorDefinitions>MSWindows=1;WIN32=1</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);$(WindowsSDK_IncludePath);</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>MSWindows=1;WIN32=1;NDEBUG;_WINDOWS;_USRDLL;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\PhotoshopSDK\pluginsdk\samplecode\common\Includes;..\..\PhotoshopSDK\pluginsdk\PhotoshopAPI\Photoshop;..\..\PhotoshopSDK\pluginsdk\PhotoshopAPI\General;..\..\PhotoshopSDK\pluginsdk\PhotoshopAPI\PICA_SP;..\..\PhotoshopSDK\pluginsdk\PhotoshopAPI\ADM;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>User32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <CustomBuildStep>
+      <Command>copy /y "$(TargetPath)" "C:\Program Files\Common Files\Adobe\Plug-Ins\CC\"</Command>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Message>Copying plugin</Message>
+      <Outputs>C:\Program Files\Common Files\Adobe\Plug-Ins\CC\$(OutputFile)</Outputs>
+      <Inputs>$(TargetPath) $(TargetFileName)</Inputs>
+    </CustomBuildStep>
+    <ResourceCompile>
+      <PreprocessorDefinitions>MSWindows=1;WIN32=1</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);$(WindowsSDK_IncludePath);</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

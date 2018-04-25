@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Libraries">
+      <UniqueIdentifier>{80423124-ee24-4084-856c-0e73f44ce79e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Libraries\libpng">
+      <UniqueIdentifier>{f6dc08c7-aa14-4908-97f9-e7100caf9728}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Libraries\zlib">
+      <UniqueIdentifier>{1244166d-586f-4a8e-ac77-ccca097f8c6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Mosaix">
+      <UniqueIdentifier>{f7bef680-b6ef-4467-83eb-dabe359a6201}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\libs\libpng\png.c">
+      <Filter>Libraries\libpng</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libs\libpng\pngerror.c">
+      <Filter>Libraries\libpng</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libs\libpng\pngget.c">
+      <Filter>Libraries\libpng</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libs\libpng\pngmem.c">
+      <Filter>Libraries\libpng</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libs\libpng\pngpread.c">
+      <Filter>Libraries\libpng</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libs\libpng\pngread.c">
+      <Filter>Libraries\libpng</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libs\libpng\pngrio.c">
+      <Filter>Libraries\libpng</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libs\libpng\pngrtran.c">
+      <Filter>Libraries\libpng</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libs\libpng\pngrutil.c">
+      <Filter>Libraries\libpng</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libs\libpng\pngset.c">
+      <Filter>Libraries\libpng</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libs\libpng\pngtrans.c">
+      <Filter>Libraries\libpng</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libs\libpng\pngwio.c">
+      <Filter>Libraries\libpng</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libs\libpng\pngwrite.c">
+      <Filter>Libraries\libpng</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libs\libpng\pngwtran.c">
+      <Filter>Libraries\libpng</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libs\libpng\pngwutil.c">
+      <Filter>Libraries\libpng</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libs\zlib\adler32.c">
+      <Filter>Libraries\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libs\zlib\compress.c">
+      <Filter>Libraries\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libs\zlib\crc32.c">
+      <Filter>Libraries\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libs\zlib\deflate.c">
+      <Filter>Libraries\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libs\zlib\gzclose.c">
+      <Filter>Libraries\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libs\zlib\gzlib.c">
+      <Filter>Libraries\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libs\zlib\gzread.c">
+      <Filter>Libraries\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libs\zlib\gzwrite.c">
+      <Filter>Libraries\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libs\zlib\infback.c">
+      <Filter>Libraries\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libs\zlib\inffast.c">
+      <Filter>Libraries\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libs\zlib\inflate.c">
+      <Filter>Libraries\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libs\zlib\inftrees.c">
+      <Filter>Libraries\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libs\zlib\trees.c">
+      <Filter>Libraries\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libs\zlib\uncompr.c">
+      <Filter>Libraries\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libs\zlib\zutil.c">
+      <Filter>Libraries\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="CommandLine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageIO.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\mosaix-core\Mosaic.cpp">
+      <Filter>Source Files\Mosaix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\mosaix-core\Image.cpp">
+      <Filter>Source Files\Mosaix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\mosaix-core\Vec4f.cpp">
+      <Filter>Source Files\Mosaix</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\libs\libpng\pnginfo.h">
+      <Filter>Libraries\libpng</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\libs\libpng\pnglibconf.h">
+      <Filter>Libraries\libpng</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\libs\libpng\pngpriv.h">
+      <Filter>Libraries\libpng</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\libs\libpng\pngstruct.h">
+      <Filter>Libraries\libpng</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\libs\libpng\png.h">
+      <Filter>Libraries\libpng</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\libs\libpng\pngconf.h">
+      <Filter>Libraries\libpng</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\libs\libpng\pngdebug.h">
+      <Filter>Libraries\libpng</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\libs\zlib\deflate.h">
+      <Filter>Libraries\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\libs\zlib\gzguts.h">
+      <Filter>Libraries\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\libs\zlib\inffast.h">
+      <Filter>Libraries\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\libs\zlib\inffixed.h">
+      <Filter>Libraries\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\libs\zlib\inflate.h">
+      <Filter>Libraries\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\libs\zlib\inftrees.h">
+      <Filter>Libraries\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\libs\zlib\trees.h">
+      <Filter>Libraries\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\libs\zlib\zconf.h">
+      <Filter>Libraries\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\libs\zlib\zlib.h">
+      <Filter>Libraries\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\libs\zlib\zutil.h">
+      <Filter>Libraries\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\libs\zlib\crc32.h">
+      <Filter>Libraries\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageIO.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\mosaix-core\Mosaic.h">
+      <Filter>Source Files\Mosaix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\mosaix-core\Image.h">
+      <Filter>Source Files\Mosaix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\mosaix-core\Vec4f.h">
+      <Filter>Source Files\Mosaix</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
