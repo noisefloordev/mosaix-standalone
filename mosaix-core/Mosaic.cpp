@@ -79,8 +79,8 @@ public:
         float result_x = cosf(angle)*x - sinf(angle)*y;
         float result_y = cosf(angle)*y + sinf(angle)*x;
 
-        result_x += offset_x;
-        result_y += offset_y;
+        result_x -= offset_x;
+        result_y -= offset_y;
 
         result_x /= block_size;
         result_y /= block_size;
