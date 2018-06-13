@@ -12,8 +12,8 @@ namespace Mosaic
     {
         int block_size = 16;
         float angle = 0;
-        int offset_x = 0;
-        int offset_y = 0;
+        int origin_x = 0;
+        int origin_y = 0;
         bool operator==(const Options &rhs) const;
     };
 

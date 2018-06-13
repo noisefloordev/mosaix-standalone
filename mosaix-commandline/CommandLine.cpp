@@ -43,11 +43,11 @@ int main(int argc, char *argv[])
             break;
 
         case 'x':
-            options.offset_x = atoi(optarg);
+            options.origin_x = atoi(optarg);
             break;
 
         case 'y':
-            options.offset_y = atoi(optarg);
+            options.origin_y = atoi(optarg);
             break;
 
         case 'b':

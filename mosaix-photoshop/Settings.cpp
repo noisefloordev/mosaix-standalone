@@ -448,8 +448,8 @@ static void ReadFromKeys(GetKeys &keys, Mosaic::Options &options, bool bReadOpti
 		{
 		case keyBlockSize:	options.block_size = keys.GetInteger(); break;
         case keyAngle:      options.angle = keys.GetFloat(); break;
-        case keyOffsetX:    options.offset_x = keys.GetInteger(); break;
-        case keyOffsetY:    options.offset_y = keys.GetInteger(); break;
+        case keyOffsetX:    options.origin_x = keys.GetInteger(); break;
+        case keyOffsetY:    options.origin_y = keys.GetInteger(); break;
 		default:
 			break;
 		}
@@ -462,8 +462,8 @@ static void WriteToKeys(PutKeys &keys, const Mosaic::Options &options, bool bOmi
 #define TO_SAVE(n) (!bOmitDefaults || options.n != Defaults.n)
 	if(TO_SAVE(block_size))		keys.PutInteger(keyBlockSize, options.block_size);
     if(TO_SAVE(angle))	    	keys.PutFloat(keyAngle, options.angle, unitAngle);
-    if(TO_SAVE(offset_x))	    keys.PutInteger(keyOffsetX, options.offset_x);
-    if(TO_SAVE(offset_y))	    keys.PutInteger(keyOffsetY, options.offset_y);
+    if(TO_SAVE(origin_x))	    keys.PutInteger(keyOffsetX, options.origin_x);
+    if(TO_SAVE(origin_y))	    keys.PutInteger(keyOffsetY, options.origin_y);
 
 	keys.Finish();
 }

@@ -11,8 +11,8 @@ bool Mosaic::Options::operator==(const Options &rhs) const
     return
         block_size == rhs.block_size &&
         angle == rhs.angle &&
-        offset_x == rhs.offset_x &&
-        offset_y == rhs.offset_y;
+        origin_x == rhs.origin_x &&
+        origin_y == rhs.origin_y;
 }
 
 // This is like a very small subset of vector<>, but with automatic
@@ -65,22 +65,22 @@ private:
 class ColorBuckets
 {
 public:
-    ColorBuckets(int block_size_, float angle_, int offset_x_, int offset_y_):
+    ColorBuckets(int block_size_, float angle_, int origin_x_, int origin_y_):
         buckets(autovector<Vec4f>(Vec4f(0,0,0,0))),
         block_size(max(1, block_size_)),
-        offset_x(offset_x_), offset_y(offset_y_),
+        origin_x(origin_x_), origin_y(origin_y_),
         angle(-float(angle_ / 180 * M_PI))
     {
     }
 
     pair<float,float> get_bucket_coord(int x, int y)
     {
+        x -= origin_x;
+        y -= origin_y;
+
         // Rotate the position.
         float result_x = cosf(angle)*x - sinf(angle)*y;
         float result_y = cosf(angle)*y + sinf(angle)*x;
-
-        result_x -= offset_x;
-        result_y -= offset_y;
 
         result_x /= block_size;
         result_y /= block_size;
@@ -98,7 +98,7 @@ public:
     autovector<autovector<Vec4f>> buckets;
     int block_size = 1;
     float angle = 0;
-    int offset_x, offset_y;
+    int origin_x = 0, origin_y = 0;
 };
 
 namespace Mosaic
@@ -121,7 +121,7 @@ namespace Mosaic
     void ApplyMosaic(Image &image, const Options &options)
     {
         // Break the image up into buckets, and sum the color in each bucket.
-        ColorBuckets color_buckets(options.block_size, options.angle, options.offset_x, options.offset_y);
+        ColorBuckets color_buckets(options.block_size, options.angle, options.origin_x, options.origin_y);
 
         for(int y = 0; y < image.height; y++)
         {

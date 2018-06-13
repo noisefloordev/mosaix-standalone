@@ -275,8 +275,8 @@ namespace
     {
         { IDC_EDIT_BLOCK_SIZE,	offsetof(Mosaic::Options, block_size), true,	true, 2,	false, 0,	1 },
         { IDC_EDIT_ANGLE,	    offsetof(Mosaic::Options, angle), false,	false, 0,	false, 0,	1 },
-        { IDC_EDIT_OFFSET_X,	offsetof(Mosaic::Options, offset_x), true,	false, 0,	false, 0,	1 },
-        { IDC_EDIT_OFFSET_Y,	offsetof(Mosaic::Options, offset_y), true,	false, 0,	false, 0,	1 },
+        { IDC_EDIT_OFFSET_X,	offsetof(Mosaic::Options, origin_x), true,	false, 0,	false, 0,	1 },
+        { IDC_EDIT_OFFSET_Y,	offsetof(Mosaic::Options, origin_y), true,	false, 0,	false, 0,	1 },
     };
     const int iNumControls = sizeof(Controls) / sizeof(*Controls);
 
