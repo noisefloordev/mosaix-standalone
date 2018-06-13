@@ -45,6 +45,7 @@
     <ClCompile Include="..\mosaix-core\Mosaic.cpp" />
     <ClCompile Include="..\mosaix-core\Vec4f.cpp" />
     <ClCompile Include="CommandLine.cpp" />
+    <ClCompile Include="getopt.c" />
     <ClCompile Include="ImageIO.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -69,6 +70,7 @@
     <ClInclude Include="..\mosaix-core\Image.h" />
     <ClInclude Include="..\mosaix-core\Mosaic.h" />
     <ClInclude Include="..\mosaix-core\Vec4f.h" />
+    <ClInclude Include="getopt.h" />
     <ClInclude Include="ImageIO.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
