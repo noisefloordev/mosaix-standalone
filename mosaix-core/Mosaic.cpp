@@ -65,9 +65,9 @@ private:
 class ColorBuckets
 {
 public:
-    ColorBuckets(int block_size_, float angle_, int origin_x_, int origin_y_):
+    ColorBuckets(float block_size_, float angle_, int origin_x_, int origin_y_):
         buckets(autovector<Vec4f>(Vec4f(0,0,0,0))),
-        block_size(max(1, block_size_)),
+        block_size(max(1.0f, block_size_)),
         origin_x(origin_x_), origin_y(origin_y_),
         angle(-float(angle_ / 180 * M_PI))
     {
@@ -96,7 +96,7 @@ public:
     };
 
     autovector<autovector<Vec4f>> buckets;
-    int block_size = 1;
+    float block_size = 1;
     float angle = 0;
     int origin_x = 0, origin_y = 0;
 };

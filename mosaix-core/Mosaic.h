@@ -10,7 +10,7 @@ namespace Mosaic
 {
     struct Options
     {
-        int block_size = 16;
+        float block_size = 16;
         float angle = 0;
         int origin_x = 0;
         int origin_y = 0;

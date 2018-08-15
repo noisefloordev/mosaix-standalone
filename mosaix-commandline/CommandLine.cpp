@@ -51,7 +51,7 @@ int main(int argc, char *argv[])
             break;
 
         case 'b':
-            options.block_size = atoi(optarg);
+            options.block_size = (float) atof(optarg);
 
             if(options.block_size == 0)
             {
