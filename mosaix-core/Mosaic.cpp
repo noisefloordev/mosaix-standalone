@@ -103,21 +103,6 @@ public:
 
 namespace Mosaic
 {
-    // Composite this image on top of target.
-    void CompositeOver(const Image &image, Image &target)
-    {
-        for(int y = 0; y < image.height; y++)
-        {
-            for(int x = 0; x < image.width; x++)
-            {
-                int offset = y*image.width + x;
-                Vec4f over = image.rgba[offset];
-                Vec4f under = target.rgba[offset];
-                target.rgba[offset] = under*(1-over.w) + over;
-            }
-        }
-    }
-
     void ApplyMosaic(Image &image, const Options &options)
     {
         // Break the image up into buckets, and sum the color in each bucket.
