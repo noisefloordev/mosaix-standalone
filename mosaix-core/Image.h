@@ -2,6 +2,7 @@
 #define Image_h
 
 #include <vector>
+#include <memory>
 using namespace std;
 
 #include "Vec4f.h"
@@ -20,6 +21,10 @@ public:
     void TopLeftVisiblePixel(int &x, int &y) const;
     void BottomRightVisiblePixel(int &x, int &y) const;
     void CenterVisiblePixel(int &x, int &y) const;
+
+    // Composite image over this one.  image must be premultiplied and
+    // have the same dimensions as this one.
+    void AlphaComposite(shared_ptr<const Image> image);
 };
 
 void swap(Image &lhs, Image &rhs);

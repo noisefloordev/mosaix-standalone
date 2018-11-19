@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mosaix-commandline", "mosaix-commandline/mosaix-commandline.vcxproj", "{0938C7C7-72A5-4223-B557-01995FE0C4E0}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mosaix-commandline", "mosaix-commandline\mosaix-commandline.vcxproj", "{0938C7C7-72A5-4223-B557-01995FE0C4E0}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mosaix-photoshop", "mosaix-photoshop/mosaix-photoshop.vcxproj", "{D21E83A7-D484-425C-9E32-C23146572D08}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mosaix-photoshop", "mosaix-photoshop\mosaix-photoshop.vcxproj", "{D21E83A7-D484-425C-9E32-C23146572D08}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mosaix-aftereffects", "mosaix-aftereffects\mosaix-aftereffects.vcxproj", "{BBDC3491-F83F-4528-A462-D0DEB5A0901B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{D21E83A7-D484-425C-9E32-C23146572D08}.Debug|x64.Build.0 = Debug|x64
 		{D21E83A7-D484-425C-9E32-C23146572D08}.Release|x64.ActiveCfg = Release|x64
 		{D21E83A7-D484-425C-9E32-C23146572D08}.Release|x64.Build.0 = Release|x64
+		{BBDC3491-F83F-4528-A462-D0DEB5A0901B}.Debug|x64.ActiveCfg = Debug|x64
+		{BBDC3491-F83F-4528-A462-D0DEB5A0901B}.Debug|x64.Build.0 = Debug|x64
+		{BBDC3491-F83F-4528-A462-D0DEB5A0901B}.Release|x64.ActiveCfg = Release|x64
+		{BBDC3491-F83F-4528-A462-D0DEB5A0901B}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{BBDC3491-F83F-4528-A462-D0DEB5A0901B}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>mosaixaftereffects</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <TargetName>mosaix-afx</TargetName>
+    <OutDir>..\bin\</OutDir>
+    <IntDir>..\build\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+    <TargetExt>.aex</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <TargetName>mosaix-afx</TargetName>
+    <OutDir>..\bin\</OutDir>
+    <IntDir>..\build\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+    <TargetExt>.aex</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\AfterEffectsSDK\Examples\Headers;..\..\AfterEffectsSDK\Examples\Headers\SP;..\..\AfterEffectsSDK\Examples\Headers\Win;..\..\AfterEffectsSDK\Examples\Resources;..\..\AfterEffectsSDK\Examples\Util;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+    </Link>
+    <CustomBuildStep>
+      <Message>Copying plugin</Message>
+      <Command>copy "$(OutDir)$(TargetName)$(TargetExt)" "C:\Program Files\Common Files\Adobe\Plug-Ins\CC"</Command>
+      <Inputs>$(TargetPath) $(TargetFileName)</Inputs>
+      <Outputs>C:\Program Files\Common Files\Adobe\Plug-Ins\CC\$(OutputFile)</Outputs>
+    </CustomBuildStep>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\AfterEffectsSDK\Examples\Headers;..\..\AfterEffectsSDK\Examples\Headers\SP;..\..\AfterEffectsSDK\Examples\Headers\Win;..\..\AfterEffectsSDK\Examples\Resources;..\..\AfterEffectsSDK\Examples\Util;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <CustomBuildStep>
+      <Message>Copying plugin</Message>
+      <Command>copy "$(OutDir)$(TargetName)$(TargetExt)" "C:\Program Files\Common Files\Adobe\Plug-Ins\CC"</Command>
+      <Inputs>$(TargetPath) $(TargetFileName)</Inputs>
+      <Outputs>C:\Program Files\Common Files\Adobe\Plug-Ins\CC\$(OutputFile)</Outputs>
+    </CustomBuildStep>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\AfterEffectsSDK\Examples\Util\AEFX_SuiteHelper.h" />
+    <ClInclude Include="..\..\AfterEffectsSDK\Examples\Util\AEGP_SuiteHandler.h" />
+    <ClInclude Include="..\..\AfterEffectsSDK\Examples\Util\Smart_Utils.h" />
+    <ClInclude Include="..\mosaix-core\Image.h" />
+    <ClInclude Include="..\mosaix-core\Mosaic.h" />
+    <ClInclude Include="..\mosaix-core\Vec4f.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\AfterEffectsSDK\Examples\Util\AEFX_SuiteHelper.c" />
+    <ClCompile Include="..\..\AfterEffectsSDK\Examples\Util\AEGP_SuiteHandler.cpp" />
+    <ClCompile Include="..\..\AfterEffectsSDK\Examples\Util\MissingSuiteError.cpp" />
+    <ClCompile Include="..\..\AfterEffectsSDK\Examples\Util\Smart_Utils.cpp" />
+    <ClCompile Include="..\mosaix-core\Image.cpp" />
+    <ClCompile Include="..\mosaix-core\Mosaic.cpp" />
+    <ClCompile Include="..\mosaix-core\Vec4f.cpp" />
+    <ClCompile Include="AFXPlugin.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Plugin.r">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">cl /I "$(ProjectDir)..\..\AfterEffectsSDK\Examples\Headers" /EP "%(Filename).r" &gt; "$(IntDir)"\\"%(Filename).rr"
+"$(ProjectDir)..\..\AfterEffectsSDK\Examples\Resources\PiPLTool" "$(IntDir)%(Filename).rr" "$(IntDir)%(Filename).rrc"
+cl /D "MSWindows" /EP $(IntDir)%(Filename).rrc &gt;               "$(ProjectDir)"\\"%(Filename)".rc
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectDir)%(Filename).rc;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">cl /I "$(ProjectDir)..\..\AfterEffectsSDK\Examples\Headers" /EP "%(Filename).r" &gt; "$(IntDir)"\\"%(Filename).rr"
+"$(ProjectDir)..\..\AfterEffectsSDK\Examples\Resources\PiPLTool" "$(IntDir)%(Filename).rr" "$(IntDir)%(Filename).rrc"
+cl /D "MSWindows" /EP $(IntDir)%(Filename).rrc &gt;               "$(ProjectDir)"\\"%(Filename)".rc
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectDir)%(Filename).rc;%(Outputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Plugin.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
