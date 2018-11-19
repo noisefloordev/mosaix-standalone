@@ -90,8 +90,8 @@ public:
     Vec4f &get_bucket(int x, int y)
     {
         pair<float,float> coord = get_bucket_coord(x, y);
-        x = int(coord.first);
-        y = int(coord.second);
+        x = int(floorf(coord.first));
+        y = int(floorf(coord.second));
         return buckets[x][y];
     };
 
